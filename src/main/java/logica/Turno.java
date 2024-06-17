@@ -1,5 +1,6 @@
 package logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Turno {
+public class Turno implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +27,7 @@ public class Turno {
     private Odontologo odonto;
 
     @ManyToOne
-    @JoinColumn(name = "id_turno")
+    @JoinColumn(name = "id_turno2")
     private Paciente paciente;
 
     public Turno() {
